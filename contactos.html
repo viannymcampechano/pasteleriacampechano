@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/contactos.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html"> Nosotros</a></li>
+                <li><a href="productos.html">Productos</li></a>
+            
+                <li><a href="contactos.html">Contactos</li></a>
+            </ul>
+            
+        </nav>
+    </header>
+    <h1>
+        <center>Contactos</center>
+    </h1>
+
+   
+    <form action="gracias.html" class="formulario" id="miFormulario">
+        <label for="nombre">Nombre</label>
+        <p><input type="text" id="nombre" name="nombre" required></p>
+        
+        <label for="sabor">Sabor:</label>
+        <p><select name="sabor" id="sabor">
+            <option value="vainilla">Relleno de vainilla</option>
+            <option value="chocolate">Relleno de chocolate</option>
+            <option value="fresa">Relleno de fresa</option>
+            <option value="dulce_leche">Dulce de leche</option>
+        </select></p>
+        
+        <label for="pago">Método de pago:</label>
+        <p><select name="metodo_pago" id="pago">
+            <option value="tarjeta">Tarjeta</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia</option>
+        </select></p>
+        
+        <label for="tamano">Tamaño:</label>
+        <p><select name="tamano" id="tamano">
+            <option value="pequeno">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+        </select></p>
+        
+        <label for="correo">Correo</label>
+        <p><input type="email" id="correo" name="correo" required></p>
+        
+        <label for="fecha_entrega">Fecha de entrega</label>
+        <p><input type="date" id="fecha_entrega" name="fecha_entrega" required></p>
+        
+        <button class="bot" type="submit">Aceptar</button>
+    </form>
+
+    <script>
+        document.getElementById("miFormulario").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch("https://script.google.com/macros/s/AKfycbz8dZYJY5F85IyoxSZSV-nJdlrY1EOJZ5Tag78QTmfcg2zx1DeHIR1bYu0Y6jfr3SmXpA/exec", {
+                method: "POST",
+                body: formData
+            }).then(response => response.text())
+              .then(data => alert("Mensaje enviado con éxito"))
+              .catch(error => alert("Error en el envío: " + error));
+        });
+    </script>
+  
+       <div class="red">
+         
+           <a href="https://www.instagram.com/"> <img src="insta rosa.png" width="50" height="50"></a>
+            <a href="https://www.tiktok.com/"> <img src="tiktok rosa.png" width="60" height="50"></a>
+            
+            <a href="https://www.whatsapp.com"> <img src="wasa rosa.png" width="75" height="50"></a>
+
+            <a href="https://www.facebook.com"> <img src="face_pink.png" width="75" height="50"></a>
+        </div>
+   
+
+</html>
